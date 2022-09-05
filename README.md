@@ -41,6 +41,9 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 
+# Excecute seed
+http://localhost:4000/api/v1/seed
+
 # production mode
 $ npm run start:prod
 ```
