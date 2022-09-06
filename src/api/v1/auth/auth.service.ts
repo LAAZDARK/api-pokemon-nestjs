@@ -32,7 +32,8 @@ export class AuthService {
     });
     return {
       user,
-      token: this.getJwtToken({ _id: user._id }),
+      token_type: 'Bearer',
+      access_token: this.getJwtToken({ _id: user._id }),
     };
   }
 

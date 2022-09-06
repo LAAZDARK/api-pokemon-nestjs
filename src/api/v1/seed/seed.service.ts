@@ -18,7 +18,7 @@ export class SeedService {
 
   async executeSeed() {
     await this.pokemonModel.deleteMany({});
-    const { data } = await this.axios.get<PokesResponse>('https://pokeapi.co/api/v2/pokemon?limit=10')
+    const { data } = await this.axios.get<PokesResponse>('https://pokeapi.co/api/v2/pokemon?limit=6')
 
     const pokemonToInsert: PokeResponse[] = [];
 

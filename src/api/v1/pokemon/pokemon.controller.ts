@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
 import { PokemonService } from './pokemon.service';
 import { CreatePokemonDto } from './dto/create-pokemon.dto';
 import { UpdatePokemonDto } from './dto/update-pokemon.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('pokemons')
 export class PokemonController {
@@ -13,6 +14,7 @@ export class PokemonController {
   }
 
   @Get()
+  @UseGuards(AuthGuard())
   findAll() {
     return this.pokemonService.findAll();
   }

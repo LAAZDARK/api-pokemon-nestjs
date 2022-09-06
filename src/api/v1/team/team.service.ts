@@ -21,8 +21,8 @@ export class TeamService {
     return team.save();
   }
 
-  async findAll() {
-    const teams = await this.teamModel.find();
+  async findAll(user: User) {
+    const teams = await this.teamModel.find({ user: user._id });
     return teams;
   }
 
